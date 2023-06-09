@@ -13,7 +13,7 @@ class MyPackagePipeline(object):
 
         # Configuration file initialization
         self.conf = _read_config(config_filename)
-        logging.info(f'Init complete...')
+        logging.info('Init complete...')
 
     # -------------------------------------------------------------------------
     # setup
