@@ -1,36 +1,40 @@
 import logging
 
 
+def run() -> None:
+    logging.info('Execute pipeline "run" action')
+
+    return
+
+
+def setup() -> None:
+    # Working on the setup of the project
+    logging.info('Starting setup pipeline step')
+
+    return
+
+
+def _read_config(config_filename):
+    return config_filename
+
+
 class MyPackagePipeline(object):
 
-    def __init__(
-                self,
-                config_filename: str,
-                start_date: str,
-                forecast_lenght: str,
-            ):
+    def __init__(self, config_filename, logger=None):
+        # Set logger
+        self.logger = logger if logger is not None else self._set_logger()
 
-        logging.info(f'Created output directory {self.simulation_dir}')
-
+        # Configuration file initialization
+        self.conf = _read_config(config_filename)
+        logging.info(f'Init complete...')
 
     # -------------------------------------------------------------------------
     # setup
     # -------------------------------------------------------------------------
-    def setup(self) -> None:
-
-        # Working on the setup of the project
-        logging.info('Starting setup pipeline step')
-
-        return
-
 
     # -------------------------------------------------------------------------
     # wrf
     # -------------------------------------------------------------------------
-    def run(self) -> None:
 
-        logging.info('Execute pipeline "run" action')
-
-        return
-
-
+    def _set_logger(self):
+        pass

@@ -79,9 +79,9 @@ def main():
 
     # WRF pipeline steps
     if "setup" in args.pipeline_step or "all" in args.pipeline_step:
-        pipeline.setup()
+        setup()
     if "run" in args.pipeline_step or "all" in args.pipeline_step:
-        pipeline.run()
+        run()
 
     logging.info(f'Took {(time.time()-timer)/60.0:.2f} min.')
 

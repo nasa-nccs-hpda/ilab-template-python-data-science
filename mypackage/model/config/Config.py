@@ -9,10 +9,10 @@ class Config:
     """
 
     # Directory to store all data files
-    input_dir: str
+    input_dir: str = "."
 
     # Directory to store model artifacts
-    output_dir: Optional[str]
+    output_dir: Optional[str] = "."
 
     # String with action to perform
-    action: str
+    action: str = "run"
