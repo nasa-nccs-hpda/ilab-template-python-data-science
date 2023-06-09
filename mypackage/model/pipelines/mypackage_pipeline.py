@@ -1,19 +1,6 @@
 import logging
 
 
-def run() -> None:
-    logging.info('Execute pipeline "run" action')
-
-    return
-
-
-def setup() -> None:
-    # Working on the setup of the project
-    logging.info('Starting setup pipeline step')
-
-    return
-
-
 def _read_config(config_filename):
     return config_filename
 
@@ -31,6 +18,19 @@ class MyPackagePipeline(object):
     # -------------------------------------------------------------------------
     # setup
     # -------------------------------------------------------------------------
+
+    @staticmethod
+    def run() -> None:
+        logging.info('Execute pipeline "run" action')
+
+        return
+
+    @staticmethod
+    def setup() -> None:
+        # Working on the setup of the project
+        logging.info('Starting setup pipeline step')
+
+        return
 
     # -------------------------------------------------------------------------
     # wrf

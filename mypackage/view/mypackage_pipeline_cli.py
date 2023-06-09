@@ -35,12 +35,12 @@ def main():
                         help='Start date for WRF')
 
     parser.add_argument('-l',
-                        '--forecast-lenght',
+                        '--forecast-length',
                         type=int,
                         required=False,
                         default=10,
-                        dest='forecast_lenght',
-                        help='Lenght of WRF forecast')
+                        dest='forecast_length',
+                        help='Length of WRF forecast')
 
     parser.add_argument(
                         '-s',
@@ -51,11 +51,9 @@ def main():
                         dest='pipeline_step',
                         help='Pipeline step to perform',
                         default=[
-                            'setup', 'geogrid', 'ungrib', 'metgrid',
-                            'real', 'wrf', 'all'],
+                            'setup', 'run', 'all'],
                         choices=[
-                            'setup', 'geogrid', 'ungrib', 'metgrid',
-                            'real', 'wrf', 'all'])
+                            'setup', 'run', 'all'])
 
     args = parser.parse_args()
 
@@ -75,13 +73,15 @@ def main():
 
     # Initialize pipeline object
     pipeline = MyPackagePipeline(
-        args.config_file, args.start_date, args.forecast_lenght)
+        args.config_file, args.start_date)
 
-    # WRF pipeline steps
+    logging.info(f'Initialized pipeline {pipeline}.')
+
+    # MyPackage pipeline steps
     if "setup" in args.pipeline_step or "all" in args.pipeline_step:
-        setup()
+        MyPackagePipeline.setup()
     if "run" in args.pipeline_step or "all" in args.pipeline_step:
-        run()
+        MyPackagePipeline.run()
 
     logging.info(f'Took {(time.time()-timer)/60.0:.2f} min.')
 
