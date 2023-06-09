@@ -11,7 +11,7 @@ app_port: 7860
 
 # ilab-template-python-data-science
 
-Template for python projects tailored to scientic applications (e.g., machine learning)
+Template for python projects tailored to scientific applications (e.g., machine learning)
 
 ## Objectives
 
