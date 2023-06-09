@@ -1,5 +1,6 @@
-from typing import List, Optional
-from dataclasses import dataclass, field
+from typing import Optional
+from dataclasses import dataclass
+
 
 @dataclass
 class Config:
@@ -15,5 +16,3 @@ class Config:
 
     # String with action to perform
     action: str
-
-
