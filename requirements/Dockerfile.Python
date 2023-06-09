@@ -1,0 +1,10 @@
+FROM nasanccs/tensorflow-caney:latest
+LABEL maintainer="jordan.a.caraballo-vega@nasa.gov"
+
+ENV TFC_VERSION=0.1.1
+ENV WILDFIRE_OCCURRENCE_VERSION=main
+
+RUN pip install wrf-python xwrf netCDF4 metpy Jinja2
+
+HEALTHCHECK NONE
+ENTRYPOINT [""]
