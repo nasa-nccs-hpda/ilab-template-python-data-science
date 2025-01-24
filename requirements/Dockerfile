@@ -1,0 +1,1 @@
+FROM ghcr.io/nasa-nccs-hpda/ilab-base-singularity:latest
