@@ -1,1 +1,1 @@
-FROM nasanccs/ilab-base:dev
+FROM nasanccs/ilab-base:latest
