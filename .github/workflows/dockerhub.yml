@@ -5,6 +5,9 @@ on:
     branches:
       - 'main'
 
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -52,4 +55,4 @@ jobs:
           context: .
           file: ./requirements/Dockerfile
           push: true
-          tags: nasanccs/ilab-template-python-data-science:latest
+          tags: nasanccs/${REPO_NAME}:latest
