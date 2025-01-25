@@ -55,4 +55,4 @@ jobs:
           context: .
           file: ./requirements/Dockerfile
           push: true
-          tags: nasanccs/${REPO_NAME}:latest
+          tags: nasanccs/${{REPO_NAME}}:latest
