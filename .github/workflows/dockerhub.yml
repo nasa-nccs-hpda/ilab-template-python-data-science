@@ -48,6 +48,11 @@ jobs:
             /usr/share/swift
           df -h /
 
+      - id: repo-basename
+        run: |
+          echo "reponame=`basename ${{ github.repository }}`" >> $GITHUB_OUTPUT
+        shell: bash
+
       -
         name: Build and push
         uses: docker/build-push-action@v4
@@ -55,4 +60,4 @@ jobs:
           context: .
           file: ./requirements/Dockerfile
           push: true
-          tags: nasanccs/${{REPO_NAME}}:latest
+          tags: nasanccs/${{ steps.repo-basename.outputs.reponame }}:latest
